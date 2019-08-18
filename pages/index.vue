@@ -7,6 +7,11 @@
 
     <SectionBlog/>
 
+    <section class="flex justify-center -mt-24 pb-32">
+      <div style="height:161px; width:780px;" class="rounded shadow-2xl bg-red-200 overflow-hidden">
+        <iframe src="https://anchor.fm/kudapara/embed" height="200px" width="100%" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </section>
   </div>
 </template>
 

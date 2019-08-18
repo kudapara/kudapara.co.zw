@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-red-100 py-32 text-blue-900">
+  <section class="bg-red-100 pt-32 pb-48 text-blue-900">
     <div class="w-full max-w-3xl mx-auto relative">
       <!-- Decorative Div -->
       <div class="absolute blog-baloon--left-center z-10">&nbsp;</div>
