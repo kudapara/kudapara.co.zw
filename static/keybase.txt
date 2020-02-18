@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kudapara
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kudapara.co.zw
+  * I am kudapara (https://keybase.io/kudapara) on keybase.
+  * I have a public key ASDqXBtbMBt39YlP28HuAq2_DKown2aUZNwsISTfzhkpZQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e79d646baafb12dae9c15916189716b763b4371514e1e3af545fb59950beee3b0a",
+      "host": "keybase.io",
+      "kid": "0120ea5c1b5b301b77f5894fdbc1ee02adbf0caa309f669464dc2c2124dfce1929650a",
+      "uid": "61cd6449b93e33eaaf03ce5b05f45a19",
+      "username": "kudapara"
+    },
+    "merkle_root": {
+      "ctime": 1582052785,
+      "hash": "4b8016658ca9868af67925270aa83e85c7079ca38054c26e55e216273622b90e35914bf2f691187de3a67d3c4c43aad4f37aa4d7e0082da5976530a201407042",
+      "hash_meta": "68db8e5d531b6caf21b504660af38188a48a7f654adce69a686b6e05cfb40495",
+      "seqno": 14640102
+    },
+    "service": {
+      "entropy": "eXJcHiXfNFYjgnfb8zNQaiTx",
+      "hostname": "kudapara.co.zw",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.0"
+  },
+  "ctime": 1582052843,
+  "expire_in": 504576000,
+  "prev": "3ef4f650fbe17f664c1a3f3dd233d12233b003c9e54e1106e49b371bf1bfac21",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg6lwbWzAbd/WJT9vB7gKtvwyqMJ9mlGTcLCEk384ZKWUKp3BheWxvYWTESpcCDsQgPvT2UPvhf2ZMGj890jPRIjOwA8nlThEG5Js3G/G/rCHEILIYwZJFBEqZnUzLh93nclX29zcCmGRmuEO4ixwkqh8oAgHCo3NpZ8RAS9qLTWl7M77zG0Q0vHNA4AKpvieEi85tGBg0Fc0GdcGqf+9jc05Hj0nLRjH6T+7O+G73wPGbCtbmynLzS3azCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILbyYhjN7HvvRhjziIrxglI0qDQK4GB3UZGwrTnrj31To3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kudapara
+
+==================================================================
