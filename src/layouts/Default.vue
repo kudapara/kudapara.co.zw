@@ -1,5 +1,5 @@
 <template>
-  <div class="layout bg-black">
+  <div class="layout bg-black font-sans">
     <div id="stars"></div>
     <div id="stars1"></div>
     <div id="stars2"></div>
