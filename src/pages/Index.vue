@@ -1,526 +1,702 @@
 <template>
-  <Layout>
-    <section class="text-black py-32 relative">
-      <div class="pt-64 container mx-auto">
-        <div class>
-          <h1 class="text-6xl font-black text-white">Portfolio</h1>
-          <p class="text-lg">See what I have created in the past and enjoy yourself!</p>
+  <Layout class="bg-dark text-white relative">
+    <section
+      id="introduction"
+      class="min-h-screen  relative overflow-hidden z-20"
+    >
+      <!-- The top left ring -->
+      <div
+        class="absolute top-0 left-0 h-64 w-64 rounded-full border-4 border-red-600 -mt-48 -ml-32"
+      >
+        &nbsp;
+      </div>
+
+      <!-- The top right solid circle -->
+      <div
+        class="z-20 absolute top-0 right-0 h-160 w-160 rounded-full bg-gradient-to-b via-red-600 from-pink-600 to-dark -mt-32 -mr-48"
+      >
+        <g-image
+          src="@/kp.png"
+          class="-mb-52 mr-32 w-96 absolute bottom-0 right-0"
+        />
+      </div>
+
+      <!-- The hero section -->
+      <div class="px-4 pt-36 container mx-auto text-lg">
+        <!-- logo -->
+        <div class="flex items-end text-red-600 text-4xl font-medium">
+          <div class="flex items-end">
+            <div
+              class="relative z-20 h-6 w-6 rounded-full bg-red-600 font-bold text-black flex items-center justify-center uppercase text-sm"
+            >
+              kp
+            </div>
+            <div
+              class="relative z-10 h-8 w-8 rounded-full border-2 border-red-600 -ml-4"
+            ></div>
+          </div>
+          <span class="ml-1 -mb-1">kudapara</span>
         </div>
 
-        <div class="mt-32 flex justify-between -mx-16 flex-wrap">
-          <div class="px-16 py-2 w-1/2 gallery-image" v-for="i in 4" :key="i">
-            <div
-              class="bg-white p-4 relative"
-              @mouseenter="showDescriptionFor(i)"
-              @mouseleave="hideDescription"
-            >
-              <div
-                :class="{hidden: shownDescription !== i }"
-                class="absolute flex flex-col justify-between center-absolute bg-transparent-yellow-brand text-black"
-              >
-                <div class="p-4">
-                  <h2 class="text-3xl font-medium mb-4">Prazlion - Procurement System</h2>
-                  <p class="text-lg">Internal app capable of doing X,Y and Z.</p>
-                </div>
+        <!-- Name -->
+        <h1 class="text-6xl font-black text-white mb-4">
+          Kudakwashe Paradzayi
+        </h1>
+        <h2 class="text-3xl text-white">
+          Designer &middot; Software Engineer &middot; Nerd
+        </h2>
+        <span class="text-base"
+          >Currently building cool things.
+          <span class="text-red-600 text-base">Learn more.</span></span
+        >
 
-                <button class="bg-black text-white text-lg w-full p-4">Visit Project</button>
-              </div>
-              <!-- The image of the  -->
-              <div class="w-full flex-1 mb-4">
-                &nbsp;
-                <g-image src="~/highlight-procurement.png" />
-              </div>
-            </div>
-            <!-- Visit the applicatioin -->
-          </div>
-
-          <div class="px-16 gallery-image">
-            <!--<button
-              class="border-2 border-white text-white text-lg p-4"
-            >See more of my work &rightarrow;</button>-->
-          </div>
+        <!-- Call to action -->
+        <div class="flex items-center justify-between max-w-lg mt-16">
+          <a
+            href="#"
+            class="block bg-red-600 text-white py-4 px-16 hover:bg-red-700 hover:shadow-lg"
+            >Follow me on twitter</a
+          >
         </div>
       </div>
-    </section>
 
-    <section class="text-white pt-64 pb-32 relative">
-      <div class="container mx-auto flex justify-between">
-        <div>
-          <div class>
-            <h1 class="text-6xl font-black">This is what I do</h1>
-            <p
-              class="text-2xl max-w-xl mb-8"
-            >This is my pitch.What I can do for you. I am selling myself to you, my potential client.</p>
-          </div>
+      <div class="container mx-auto pt-16">
+        <div
+          class="h-1 bg-red-600 bg-gradient-to-r from-red-600 to-dark max-w-4xl"
+        ></div>
 
-          <div class>
-            <ul>
-              <li v-for="service in services" :key="service" class="flex items-center text-xl py-2">
+        <!-- Links to other parts of the site -->
+        <ul class="mt-8 flex flex-wrap max-w-lg">
+          <li class="w-1/2 py-2 border-b border-gray-800">
+            <a
+              href="/blog"
+              class="flex items-center justify-between w-48 py-2 px-4 hover:bg-darktransparent rounded-lg"
+            >
+              <div class="flex items-center space-x-2">
                 <svg
-                  class="mr-4"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
+                  class="w-4 h-4 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12 22C9.34784 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 9.34784 3.05357 6.8043 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C14.6522 2 17.1957 3.05357 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM9.7 11.3L11 12.59L14.3 9.29C14.4924 9.12744 14.7392 9.0435 14.9908 9.05496C15.2425 9.06643 15.4805 9.17246 15.6574 9.35185C15.8343 9.53125 15.9369 9.77078 15.9448 10.0226C15.9527 10.2744 15.8653 10.5199 15.7 10.71L11.7 14.71C11.5131 14.8932 11.2618 14.9959 11 14.9959C10.7382 14.9959 10.4869 14.8932 10.3 14.71L8.3 12.71C8.13472 12.5199 8.04729 12.2744 8.05519 12.0226C8.06309 11.7708 8.16573 11.5312 8.34259 11.3519C8.51946 11.1725 8.75752 11.0664 9.00918 11.055C9.26084 11.0435 9.50755 11.1274 9.7 11.29V11.3Z"
-                    fill="#FDD231"
-                  />
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd"
+                  ></path>
                 </svg>
-                {{ service }}
-              </li>
-            </ul>
-            <button
-              class="border-2 border-white text-white text-lg p-4 mt-8"
-            >See more of my skills & capabilities &rightarrow;</button>
-          </div>
-        </div>
-
-        <div class="-mr-24">
-          <div class="relative p-2">
-            <div class="absolute z-10 h-full w-full -mr-8 mt-8 right-0 border-4 border-white">&nbsp;</div>
-            <div
-              class="absolute z-20 try-position bottom-0 h-full w-full bg-yellow-brand -ml-8 -mb-16 left-0"
-            >&nbsp;</div>
-            <g-image src="~/me.jpg" class="relative z-30 max-w-md mt-24" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="apply-for-work" class="flex items-center justify-center pt-32">
-      <!-- pt-32 to compensate for the lost padding above-->
-      <div class="w-full bg-white text-black p-8 relative">
-        <h3 class="text-5xl font-black">We could build something great, together</h3>
-
-        <!-- <label for class="block text-xl font-black mb-4">Select the packages that suite your needs</label> -->
-        <p class="py-4 mb-4">Every company is unique. Choose the plan that truly captures the needs of your company. If you are not sure select <strong>Rich Websites</strong> and describe your project in the fields that appear.</p>
-        <div class="flex justify-start">
-          <div
-            v-for="plan in plans"
-            :key="plan.code"
-            class="flex flex-col justify-between hover:bg-gray-200 hover:cursor-pointer hover:text-black border-4 rounded max-w-sm min-w-sm p-8 mr-4"
-            :class="{
-              'border-black': selectedPackages.includes(plan.code),
-              'bg-black': selectedPackages.includes(plan.code),
-              'text-white': selectedPackages.includes(plan.code),
-              'shadow-xl': selectedPackages.includes(plan.code)
-            }"
-            @click="toggleSelectedPackages(plan.code)"
-          >
-          <div>
-
-            <div class="flex justify-center -mt-12 relative" v-if="plan.isMostPopular">
-              <div
-                class="span px-6 bg-yellow-brand uppercase text-black border-4 rounded"
-                :class="{
-              'border-white': selectedPackages.includes(plan.code)
-              }"
-              >most popular</div>
-            </div>
-              <div class="flex items-center justify-between mb-4"
-              :class="{'mt-4': plan.isMostPopular}">
-                <span class="text-3xl font-medium">{{ plan.title }}</span>
-                <input
-                  type="checkbox"
-                  v-model="selectedPackages"
-                  name
-                  :value="plan.code"
-                  id
-                  class="form-checkbox text-yellow-brand h-8 w-8"
-                />
+                <span>Blog</span>
               </div>
 
-              <div class="mb-4">{{ plan.description }}</div>
-
-          </div>
-            <div>
-
-              <div class="py-4">
-                <ul>
-                  <li
-                    class="flex items-center py-1"
-                    v-for="feature in plan.features"
-                    :key="feature"
-                  >
-                    <svg
-                      class="mr-4 h-6 w-6 fill-current"
-                      viewBox="0 0 24 24"
-                      fill="fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 22C9.34784 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 9.34784 3.05357 6.8043 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C14.6522 2 17.1957 3.05357 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM9.7 11.3L11 12.59L14.3 9.29C14.4924 9.12744 14.7392 9.0435 14.9908 9.05496C15.2425 9.06643 15.4805 9.17246 15.6574 9.35185C15.8343 9.53125 15.9369 9.77078 15.9448 10.0226C15.9527 10.2744 15.8653 10.5199 15.7 10.71L11.7 14.71C11.5131 14.8932 11.2618 14.9959 11 14.9959C10.7382 14.9959 10.4869 14.8932 10.3 14.71L8.3 12.71C8.13472 12.5199 8.04729 12.2744 8.05519 12.0226C8.06309 11.7708 8.16573 11.5312 8.34259 11.3519C8.51946 11.1725 8.75752 11.0664 9.00918 11.055C9.26084 11.0435 9.50755 11.1274 9.7 11.29V11.3Z"
-                        fill="text-current"
-                      />
-                    </svg>
-                    {{ feature }}
-                  </li>
-                </ul>
-              </div>
-            <div class="flex justify-between">
-              <div>
-                <span class="block text-xs text-gray-600 uppercase">starting from</span>
-                <span class="text-3xl font-black">${{ plan.price }}</span>
-              </div>
-
-              <div class="text-right">
-                <span class="block text-xs text-gray-600 uppercase">Hosting & Maintanance</span>
-                <div v-if="plan.hostingPrice == 0">
-                  <span class="text-3xl font-black">FREE</span>
-                </div>
-                <div v-else>
-                  <span class="text-3xl font-black">${{ plan.hostingPrice }}</span>
-                  <span class="text-xs uppercase">/month</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-            </div>
-        <div class="px-4 py-2 rounded-full bg-yellow-300 text-black inline-flex items-center mt-8">
-          <span
-            class="inline-flex items-center px-2 bg-yellow-500 uppercase tracking-wide text-xs font-black rounded-full mr-4"
-          >
-            <span class="text-xl mr-1">✌🏼</span> Bonus
-          </span> All plans come with a
-          <span class="font-bold underline px-1">free custom domain</span>,
-          <span class="font-bold underline px-1">free ssl certificate</span>, and
-          <span class="font-bold underline px-1">free hosting for the first month</span> .
-        </div>
-
-        <!-- Input section -->
-        <div
-          :class="{
-            'hidden': !selectedPackages.includes('design') && !selectedPackages.includes('basic') && !selectedPackages.includes('rich') && !selectedPackages.includes('webapp')
-          }"
-        >
-          <div class="mt-8">
-            <h3 class="text-xl font-black mb-4">Briefly Describe your Project</h3>
-            <div class="flex mb-4">
-              <div class="mr-4">
-                <label for class="block font-bold uppercase mb-2">Your Name</label>
-                <input
-                  type="text"
-                  autofocus
-                  class="form-input border-black border-2"
-                  placeholder="e.g John Doe"
-                />
-              </div>
-
-              <div class="mr-4">
-                <label for class="block font-bold uppercase mb-2">Company Name</label>
-                <input
-                  type="text"
-                  class="form-input border-black border-2"
-                  placeholder="e.g Progic Private Limited"
-                />
-              </div>
-
-              <div class="mr-4">
-                <label for class="block font-bold uppercase mb-2">Company Website</label>
-                <input
-                  type="url"
-                  class="form-input border-black border-2"
-                  placeholder="e.g https://progic.co"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="pr-4 mb-4">
-            <label for class="block font-bold uppercase mb-2">Project Description</label>
-            <textarea name class="form-textarea w-full border-black border-2" id rows="4"></textarea>
-          </div>
-
-          <label for class="block font-bold uppercase mb-2">Email address</label>
-          <div class="bg-white p-4 flex rounded border-2 border-black mr-4">
-            <input
-              type="text"
-              class="flex-1 p-4 outline-none text-black"
-              placeholder="Your email address"
-            />
-            <button
-              class="bg-black hover:shadow-md text-white text-lg py-4 px-16 font-bold rounded"
-            >Choose Package(s) &rightarrow;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="text-white text-xl py-64">
-      <div class="container mx-auto flex flex-col items-center">
-        <Accordion title="FAQ?" :items="frequentlyAskedQuestions" />
-
-        <button
-          class="border-2 border-white text-white text-lg p-4"
-        >You could ask me anything &rightarrow;</button>
-      </div>
-    </section>
-
-    <section class="text-white pb-64 relative">
-      <div class="container mx-auto">
-        <div class>
-          <h1 class="text-6xl font-black">What people say about me</h1>
-          <p class="text-2xl mb-8">Some people really say nice things about me you know.</p>
-        </div>
-      </div>
-      <div class="testimonials-block">
-        <div class="animation">
-          <div class="flex">
-            <div
-              v-for="i in 10"
-              :key="i"
-              class="testimonial-card w-full max-w-sm min-w-sm bg-white pt-16 px-8 text-gray-800 text-xl mr-6"
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="w-1/2 py-2 border-b border-gray-800">
+            <a
+              href="/blog"
+              class="flex items-center justify-between w-48 py-2 px-4 hover:bg-darktransparent rounded-lg"
             >
-              <p class="mb-2">He is an awesome developer and a fun human in general</p>
-              <p class="mb-2">I am continually mind blown by the stuff he puts out.</p>
-
-              <div class="-mb-10 relative z-30">
-                <div class="h-20 w-20 rounded-full border-4 border-white bg-black">&nbsp;</div>
+              <div class="flex items-center space-x-2">
+                <svg
+                  class="w-4 h-4 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Twitter</span>
               </div>
-              <div class="-mx-8 bg-gray-200 p-8 pt-12 relative">
-                <div class="flex items-center justify-between">
-                  <p>Scooby McDoo</p>
-                  <p class="text-sm">Chief Technology Officer</p>
-                </div>
 
-                <div class="flex items-center justify-between text-right">
-                  <a href="https://twitter.com/scooby" class="text-sm text-indigo-600">@scooby</a>
-                  <a href="https://dooscooby.com" class="text-sm text-indigo-600">dooscooby.com</a>
-                </div>
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="w-1/2 py-2 border-b border-gray-800">
+            <a
+              href="/blog"
+              class="flex items-center justify-between w-48 py-2 px-4 hover:bg-darktransparent rounded-lg"
+            >
+              <div class="flex items-center space-x-2">
+                <svg
+                  class="w-4 h-4 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Projects</span>
               </div>
-            </div>
-          </div>
-        </div>
+
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="w-1/2 py-2 border-b border-gray-800">
+            <a
+              href="/blog"
+              class="flex items-center justify-between w-48 py-2 px-4 hover:bg-darktransparent rounded-lg"
+            >
+              <div class="flex items-center space-x-2">
+                <svg
+                  class="w-4 h-4 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Github</span>
+              </div>
+
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="w-1/2 py-2">
+            <a
+              href="/blog"
+              class="flex items-center justify-between w-48 py-2 px-4 hover:bg-darktransparent rounded-lg"
+            >
+              <div class="flex items-center space-x-2">
+                <svg
+                  class="w-4 h-4 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>About Me</span>
+              </div>
+
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="w-1/2 py-2">
+            <a
+              href="/blog"
+              class="flex items-center justify-between w-48 py-2 px-4 hover:bg-darktransparent rounded-lg"
+            >
+              <div class="flex items-center space-x-2">
+                <svg
+                  class="w-4 h-4 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Substack</span>
+              </div>
+
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="text-white text-xl pb-32">
-      <div class="container mx-auto flex justify-between rounded p-8 relative border-t">
-        <div>
-          <h3 class="text-2xl font-bold mb-6">Extras</h3>
-          <ul>
-            <li class="mb-4">Allanite Classified</li>
-            <li class="mb-4">School Metrics</li>
-            <li class="mb-4">Progic Wallet</li>
-            <li class="mb-4">Progic</li>
-          </ul>
-        </div>
+    <!-- The bubbles that show my interests -->
+    <ul class="scroll js-homepage-bubble z-10">
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -30.0125px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -101.973px;
+          transform: translate(208.973px, 759.612px) rotate(2.3deg);
+        "
+      >
+        Software Engineer
+      </li>
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -32.972px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -129.77px;
+          transform: translate(129.77px, 756.653px) rotate(1.6deg);
+        "
+      >
+        UI/UX Designer
+      </li>
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -30.371px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -124.428px;
+          transform: translate(177.428px, 759.254px) rotate(-3.6deg);
+        "
+      >
+        Crypto Enthusiast
+      </li>
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -30.8746px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -126.661px;
+          transform: translate(179.661px, 758.75px) rotate(-2deg);
+        "
+      >
+        Digital Artist
+      </li>
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -27.7036px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -115.341px;
+          transform: translate(168.341px, 761.921px) rotate(3.1deg);
+        "
+      >
+        The design guy
+      </li>
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -27.3162px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -93.8683px;
+          transform: translate(98.8683px, 762.309px) rotate(2.6deg);
+        "
+      >
+        Blockchain curious
+      </li>
+      <li
+        class="text"
+        style="
+          position: absolute;
+          top: -29.7394px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -133.522px;
+          transform: translate(140.522px, 759.886px) rotate(0.7deg);
+        "
+      >
+        Team Player
+      </li>
+      <li
+        class="brand flex space-x-2 text-sm"
+        style="
+          position: absolute;
+          top: -35.061px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -35.061px;
+          transform: translate(67.061px, 754.564px) rotate(3.3deg);
+        "
+      >
+        <img src="https://res.cloudinary.com/fresh-ideas/image/upload/v1599047512/Joeys_logo_d7grq3.svg" alt="" class="w-12">
+        <span>joeys.co.zw</span>
+      </li>
+      <li
+        class="brand flex space-x-2 text-sm"
+        style="
+          position: absolute;
+          top: -35.1219px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -35.122px;
+          transform: translate(160.122px, 754.503px) rotate(1.8deg);
+        "
+      >
+        <img src="https://res.cloudinary.com/fresh-ideas/image/upload/v1593878328/Mobile/Leaves_yase5z.svg" alt="" class="w-12">
+        <span>freshinabox.co.zw</span>
+      </li>
+      <li
+        class="brand flex space-x-2 text-sm"
+        style="
+          position: absolute;
+          top: -35.061px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -35.061px;
+          transform: translate(113.061px, 754.564px) rotate(0.6deg);
+        "
+      >
+        <img src="https://res.cloudinary.com/fresh-ideas/image/upload/v1612788463/logos/Fresh-Ideas-Logo_es5r47.png" alt="" class="w-12">
+        <span>freshideas.co.zw</span>
+      </li>
+      <li
+        class="brand flex space-x-2 text-sm"
+        style="
+          position: absolute;
+          top: -36.9567px;
+          transform-origin: 50% 50%;
+          opacity: 0;
+          transition: none 0s ease 0s;
+          left: -36.9567px;
+          transform: translate(194.957px, 752.668px) rotate(1.9deg);
+        "
+      >
+      
+      <img src="https://res.cloudinary.com/fresh-ideas/image/upload/v1600246342/bottlestore_lanscape_boqqzw.svg" alt="" class="h-12">
 
-        <div>
-          <h3 class="text-2xl font-bold mb-6">Stay in the Loop</h3>
-          <p class="mb-2">Be the first to know if there is a new product or I have bought a new dog.</p>
-
-          <p class="mb-4">No spam, I promise.</p>
-
-          <div class="bg-white p-4 flex rounded">
-            <input
-              type="text"
-              class="flex-1 p-4 outline-none text-black"
-              placeholder="Your email address"
-            />
-            <button
-              class="bg-yellow-brand hover:shadow-md text-black text-lg py-4 px-16 font-bold rounded"
-            >Subscribe</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mx-auto p-8 rounded bg-yellow-brand text-center text-black font-medium">
-        This website was designed and coded with ❤️ by Kudakwashe Paradzayi -
-        <a
-          href="#"
-          class="underline"
-        >Get yours too</a>
-      </div>
-    </section>
+      </li>
+    </ul>
   </Layout>
 </template>
 
 <script>
-import Accordion from "@/components/Accordion";
+import dynamicProperties from "dynamic-properties";
 export default {
   metaInfo: {
-    title: "Hello, world!"
+    title: "Kudakwashe Paradzayi",
   },
 
-  components: {
-    Accordion
-  },
-
-  data() {
-    return {
-      selectedPackages: [],
-      shownDescription: null,
-      services: ["Design", "Programming", "Consulting", "Talks", "Trainings"],
-
-      frequentlyAskedQuestions: [
-        {
-          title: "How much do your services cost?",
-          description: `
-            It depends!
-
-            Most projects range from  USD $999  to USD $10,000 depending on the complexity and scope of the project. Usually after each project there is a monthly fee of about USD $199 for maintainance and minor updates.
-
-            Any major features to be introduced after wards will be billed as a seperate project and the amount is subject to negotiation. 
-          `
-        },
-        {
-          title: "How much do your services cost?",
-          description: `
-            It depends!
-
-            Most projects range from  USD $999  to USD $10,000 depending on the complexity and scope of the project. Usually after each project there is a monthly fee of about USD $199 for maintainance and minor updates.
-
-            Any major features to be introduced after wards will be billed as a seperate project and the amount is subject to negotiation. 
-          `
-        }
-      ],
-
-      plans: [
-        {
-          title: "Website Design",
-          code: "design",
-          description:
-            "Get hand crafted designs for your website. Build it yourself",
-          price: 99,
-          hostingPrice: 0,
-          features: [
-            "Access to original design assets",
-            "Maximum of 2 revisions",
-            "Get mobile and desktop variations"
-          ]
-        },
-        {
-          title: "Basic Websites",
-          code: "basic",
-          description:
-            "Static websites, useful when you are just starting out and just want to bring your brand out there",
-          price: 199,
-          hostingPrice: 9,
-          features: [
-            "5 standard Pages",
-            "Includes design of the website",
-            "Website ready in 2 weeks",
-            "Maximum of 2 revisions"
-          ]
-        },
-        {
-          title: "Rich Websites",
-          code: "rich",
-          description:
-            "Rich interactive websites that allow you to showcase your brand and manage your blog and integrate with social media",
-          price: 699,
-          isMostPopular: true,
-          hostingPrice: 29,
-          features: [
-            "Up to 10 standard Pages",
-            "Includes design of the website",
-            "Website ready in 3 weeks",
-            "Maximum of 2 revisions",
-            "Access to the code repository",
-          ]
-        },
-        {
-          title: "Web Applications",
-          code: "webapp",
-          description:
-            "Custom web applications to fulfill the business needs for your company.",
-          price: 999,
-          hostingPrice: 99,
-          features: [
-            "Agile development",
-            "Custom features",
-            "Prototype ready in 3 weeks",
-            "Access to the code repository"
-          ]
-        }
-      ]
-    };
+  mounted() {
+    this.setupHomepageBubble();
   },
 
   methods: {
-    showDescriptionFor(i) {
-      this.shownDescription = i;
-    },
+    setupHomepageBubble() {
+      console.log('setting up the homepage bubble')
+      const component = document.querySelector(".js-homepage-bubble");
 
-    hideDescription() {
-      this.shownDescription = null;
-    },
-
-    toggleSelectedPackages(pkg) {
-      if (this.selectedPackages.includes(pkg)) {
-        this.selectedPackages.splice(this.selectedPackages.indexOf(pkg), 1);
-      } else {
-        this.selectedPackages.push(pkg);
+      if (!component) {
+        return;
       }
-    }
-  }
+
+      const dimensions = dynamicProperties({
+        viewportWidth: () => component.getBoundingClientRect().width,
+        viewportHeight: () => component.getBoundingClientRect().height,
+      });
+
+      const items = Array.from(component.children);
+
+      // Hide everything
+      items.forEach((item) => {
+        Object.assign(item.style, {
+          position: "absolute",
+          top: "100%",
+          transformOrigin: "50% 50%",
+          opacity: 0,
+          transition: "none",
+        });
+      });
+
+      // Options
+      const options = {
+        delayBetweenItems: 666,
+        maximumItemsInViewport: 12,
+        durationBounds: [10000, 20000],
+      };
+
+      if (!"animate" in document.body) {
+        // Fallback
+        const fallbackItems = items
+          .map((item) => ({ item, sort: Math.random() }))
+          .sort(({ sort: a }, { sort: b }) => a - b)
+          .map(({ item }) => item)
+          .slice(0, options.maximumItemsInViewport);
+
+        const positions = [];
+
+        const getRandomPosition = ({ width, height }) => {
+          const x =
+            width / 2 +
+            Math.floor(Math.random() * (dimensions.viewportWidth - width));
+          const y =
+            height / 2 +
+            Math.floor(Math.random() * (dimensions.viewportHeight - height));
+
+          return {
+            x,
+            y,
+            width,
+            height,
+          };
+        };
+
+        const hasOverlap = (position, positions) => {
+          const overlapMargin = 20; // Making this too high can cause the whole thing to crash
+
+          return positions.some(({ x, y, width, height }) => {
+            const minX = x - width / 2 - overlapMargin;
+            const maxX = x + width / 2 + overlapMargin;
+            const minY = y - height / 2 - overlapMargin;
+            const maxY = y + height / 2 + overlapMargin;
+
+            // B's X is right of A's X
+            if (position.x - position.width / 2 > maxX) {
+              return false;
+            }
+
+            // B's X is left of A's X
+            if (position.x + position.width / 2 < minX) {
+              return false;
+            }
+
+            // B's X is right of A's X
+            if (position.y - position.height / 2 > maxY) {
+              return false;
+            }
+
+            // B's X is left of A's X
+            if (position.y + position.height / 2 < minY) {
+              return false;
+            }
+
+            return true;
+          });
+        };
+
+        fallbackItems.forEach((item) => {
+          const { width, height } = item.getBoundingClientRect();
+
+          let position;
+          let tries = 0; // Limit number of tries to avoid infinite loops :-)
+
+          do {
+            tries++;
+            position = getRandomPosition({ width, height });
+          } while (tries < 1000 && hasOverlap(position, positions));
+
+          positions.push(position);
+
+          const rotate = Math.round(-40 + Math.random() * 80) / 10;
+
+          Object.assign(item.style, {
+            top: `${-1 * (height / 2)}px`,
+            left: `${-1 * (width / 2)}px`,
+            transform: `translate(${position.x}px, ${position.y}px) rotate(${rotate}deg)`,
+            opacity: 1,
+          });
+        });
+
+        // Fallback finished, quit here
+        return;
+      }
+
+      // Prototype bubble
+      let queue = [...items];
+      let currentlyBubbling = 0;
+      let pool = [];
+
+      const launchBubble = () => {
+        const [item] = queue.splice(
+          Math.floor(Math.random() * queue.length),
+          1
+        );
+
+        // Place
+        const { width, height } = item.getBoundingClientRect();
+        const startX =
+          width / 2 +
+          Math.floor(Math.random() * (dimensions.viewportWidth - width));
+        const startY = dimensions.viewportHeight - height / 2;
+        const startRotate = Math.round(-40 + Math.random() * 80) / 10;
+
+        const deltaX = Math.round(Math.random() * (2 * width) - width);
+        const deltaRotate = Math.round(-300 + Math.random() * 600) / 10;
+
+        const endX = startX + deltaX;
+        const endY = -1 * Math.max(height, width / 2); // half width to account for rotation (it rotated 90deg,)
+        const endRotate = startRotate + deltaRotate;
+
+        const [minDuration, maxDuration] = options.durationBounds;
+        const duration =
+          minDuration + Math.floor(Math.random() * (maxDuration - minDuration));
+
+        Object.assign(item.style, {
+          top: `${-1 * (height / 2)}px`,
+          left: `${-1 * (width / 2)}px`,
+          transform: `translate(${startX}px, ${startY}px) rotate(${startRotate}deg)`,
+          opacity: 0,
+        });
+
+        currentlyBubbling++;
+
+        item
+          .animate(
+            [
+              {
+                transform: `translate(${startX}px, ${startY}px) rotate(${startRotate}deg) scale(0.825)`,
+                opacity: 0,
+              },
+              { opacity: 0, offset: 0.025, easing: "linear" },
+              { opacity: 1, offset: 0.15, easing: "linear" },
+              { opacity: 1, offset: 0.75, easing: "linear" },
+              {
+                transform: `translate(${endX}px, ${endY}px) rotate(${endRotate}deg) scale(1.125)`,
+                opacity: 0,
+              },
+            ],
+            {
+              duration,
+              easing: "ease-in",
+            }
+          )
+          .finished.then(() => {
+            currentlyBubbling--;
+            pool.push(item);
+          });
+      };
+
+      const runtime = () => {
+        if (queue.length === 0) {
+          queue = pool;
+          pool = [];
+        }
+
+        if (currentlyBubbling < options.maximumItemsInViewport) {
+          launchBubble();
+        }
+
+        setTimeout(() => runtime(), options.delayBetweenItems);
+      };
+
+      runtime();
+    },
+  },
 };
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
 
-.gallery-image:nth-child(even) {
-  @apply mt-16;
-}
-
-.gallery-image:nth-child(odd) {
-  @apply -mt-16;
-}
-
-.bg-transparent-yellow-brand {
-  background-image: linear-gradient(#fdd231, #fdd2310a);
-}
-
-.center-absolute {
-  width: calc(100% - 2rem);
-  height: calc(100% - 2rem);
-}
-
-.faq-body {
-  height: 0;
-  overflow: hidden;
-  animation: transition max-height 0.3s;
-}
-.faq-body--open {
-  max-height: 500px;
-  transition: max-height 0.25s ease-in;
-}
-
-.testimonial-card {
-  background-image: url("/callout.svg");
-  background-repeat: no-repeat;
-  background-position: top left;
-}
-
-/* testimonial animation experiments */
-@keyframes animatedBackground {
-  from {
-    left: 0px;
-  }
-  50% {
-    left: -100%;
-  }
-  100% {
-    left: 0px;
-  }
-}
-.testimonials-block {
+<style scoped>
+.scroll {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
   width: 100%;
-  padding: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0.3;
+}
+
+.scroll li {
+  background-color: #111015;
+  border-radius: 20px;
+  border-bottom-right-radius: 5px;
+  display: inline;
+  padding: 15px 20px;
+  font-size: 1.05em;
+  white-space: nowrap;
   overflow-y: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.animation {
-  width: 100%;
-  position: relative;
-  animation: animatedBackground 160s linear infinite;
+.scroll .brand {
+    border-radius: 100px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
 }
 </style>
