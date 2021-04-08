@@ -2,7 +2,7 @@
   <Layout class="bg-dark text-white relative">
     <section
       id="introduction"
-      class="min-h-screen  relative overflow-hidden z-20"
+      class="min-h-screen  relative overflow-hidden z-20 px-2"
     >
       <!-- The top left ring -->
       <div
@@ -13,18 +13,18 @@
 
       <!-- The top right solid circle -->
       <div
-        class="z-20 absolute top-0 right-0 h-160 w-160 rounded-full bg-gradient-to-b via-red-600 from-pink-600 to-dark -mt-32 -mr-48"
+        class="z-20 absolute top-0 right-0 h-64 w-64 md:h-160 md:w-160 rounded-full bg-gradient-to-b via-red-600 from-pink-600 to-dark -mt-16 -mr-24 md:-mt-32 md:-mr-48"
       >
         <g-image
           src="@/kp.png"
-          class="-mb-52 mr-32 w-96 absolute bottom-0 right-0"
+          class="-mb-24 md:-mb-52 mr-24 md:mr-32 w-44 md:w-96 absolute bottom-0 right-0"
         />
       </div>
 
       <!-- The hero section -->
-      <div class="px-4 pt-36 container mx-auto text-lg">
+      <div class="px-4 pt-80 md:pt-36 container mx-auto md:text-lg">
         <!-- logo -->
-        <div class="flex items-end text-red-600 text-4xl font-medium">
+        <div class="flex items-end text-red-600 text-xl md:text-4xl font-medium">
           <div class="flex items-end">
             <div
               class="relative z-20 h-6 w-6 rounded-full bg-red-600 font-bold text-black flex items-center justify-center uppercase text-sm"
@@ -32,29 +32,29 @@
               kp
             </div>
             <div
-              class="relative z-10 h-8 w-8 rounded-full border-2 border-red-600 -ml-4"
+              class="relative z-10 h-6 w-6 md:h-8 md:w-8 rounded-full border-2 border-red-600 -ml-2 md:-ml-4"
             ></div>
           </div>
           <span class="ml-1 -mb-1">kudapara</span>
         </div>
 
         <!-- Name -->
-        <h1 class="text-6xl font-black text-white mb-4">
+        <h1 class="text-2xl md:text-6xl font-black text-white mb-4">
           Kudakwashe Paradzayi
         </h1>
-        <h2 class="text-3xl text-white">
+        <h2 class="text-xl md:text-3xl text-white mb-2">
           Designer &middot; Software Engineer &middot; Nerd
         </h2>
-        <span class="text-base"
-          >Currently building cool things.
-          <span class="text-red-600 text-base">Learn more.</span></span
+        <span class="text-base text-gray-200"
+          >Currently bringing fresh ideas to life.
+          <a href="https://freshideas.co.zw" class="text-red-600 text-base">Learn more.</a></span
         >
 
         <!-- Call to action -->
-        <div class="flex items-center justify-between max-w-lg mt-16">
+        <div class="flex items-center justify-between md:max-w-lg mt-16">
           <a
-            href="#"
-            class="block bg-red-600 text-white py-4 px-16 hover:bg-red-700 hover:shadow-lg"
+            href="https://twitter.com/intent/follow?screen_name=kudapara"
+            class="w-full md:w-auto text-center block bg-red-600 text-white py-4 px-16 hover:bg-red-700 hover:shadow-lg"
             >Follow me on twitter</a
           >
         </div>
@@ -66,7 +66,7 @@
         ></div>
 
         <!-- Links to other parts of the site -->
-        <ul class="mt-8 flex flex-wrap max-w-lg">
+        <ul v-if="false" class="mt-8 flex flex-wrap max-w-lg">
           <li class="w-1/2 py-2 border-b border-gray-800">
             <a
               href="/blog"
